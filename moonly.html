@@ -1,0 +1,149 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonly Ateliê - Bolsas de Crochê</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        header {
+            background-color: #ead6cf;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            margin-top: 10px;
+        }
+
+        .carousel img.active {
+            opacity: 1;
+        }
+
+        .produtos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .produto {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+        }
+
+        .produto img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #ead6cf;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+    </style>
+    <!-- CDN para Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Moonly Ateliê</h1>
+        <p>Bolsas de Crochê Artesanais</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/moonly.atelie/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=5511958857562" target="_blank"><i
+                    class="fab fa-whatsapp"></i></a>
+        </div>
+    </header>
+
+    <div class="carousel">
+        <img src="./imgs/Banner sobre nos3.webp" class="active" alt="Slide 1">
+        <img src="./imgs/sddefault.jpg" alt="Slide 2">
+        <img src="./imgs/download.jpg" alt="Slide 3">
+    </div>
+
+    <section class="produtos">
+        <div class="produto">
+            <img src="./imgs/download.jpg" alt="Bolsa 1">
+            <h3>Bolsa Elegance</h3>
+            <p>Feita à mão com fios premium.</p>
+        </div>
+        <div class="produto">
+            <img src="./imgs/bolsa_croche_06.webp" alt="Bolsa 2">
+            <h3>Bolsa Charm</h3>
+            <p>Design sofisticado para qualquer ocasião.</p>
+        </div>
+        <div class="produto">
+            <img src="./imgs/download (1).jpg" alt="Bolsa 3">
+            <h3>Bolsa Casual</h3>
+            <p>Perfeita para o dia a dia.</p>
+        </div>
+        <div class="produto">
+            <img src="./imgs/download (2).jpg" alt="Bolsa 4">
+            <h3>Bolsa Vintage</h3>
+            <p>Um toque retrô e artesanal.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Moonly Ateliê. Todos os direitos reservados.</p>
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let index = 0;
+            const slides = document.querySelectorAll(".carousel img");
+
+            function showSlide() {
+                slides.forEach(slide => slide.classList.remove("active"));
+                slides[index].classList.add("active");
+                index = (index + 1) % slides.length;
+            }
+            setInterval(showSlide, 3000);
+        });
+    </script>
+</body>
+
+</html>
